@@ -8,3 +8,9 @@ h1 {
     margin-top: 50px;
     font-size: 5em;
 } 
+
+p {
+    color: #fff;
+    text-align: center;
+    font-size: 2em;
+}
