@@ -8,11 +8,17 @@ Report Page
     <h1>Welcome to the Report Page</h1>
     <p>This page will contain contents on reports.</p>
 
-{% for page in pages %}
-    <div>
-        <img src="{{page.image.url}}" alt="">
-        <h3>{{page.name}}</h3>
-    </div>
 
-{% endfor %}
+<div class="grid grid-cols-3 gap-4 m-4">
+ 
+    {% for page in pages %}
+        <div>
+            <img src="{{page.image.url}}" alt="">
+            <h3>{{page.name}}</h3>
+        </div>
+
+    {% endfor %}
+
+</div>
+
 {% endblock %}
