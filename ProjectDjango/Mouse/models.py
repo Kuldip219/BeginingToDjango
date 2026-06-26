@@ -13,6 +13,7 @@ class variety(models.Model):
     image = models.ImageField(upload_to='variety_images/')
     date_created = models.DateTimeField(default=timezone.now)
     cp_type = models.CharField(max_length=5, choices=CP_TYPE_CHOICES, default='Type1')
+    description = models.TextField(default="")
 
     def __str__(self):
         return self.name
