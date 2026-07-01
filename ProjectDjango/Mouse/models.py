@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -17,3 +18,16 @@ class variety(models.Model):
 
     def __str__(self):
         return self.name
+    
+# One to Many
+
+class ProjectReview(models.Model):
+    mice = models.ForeignKey(variety, on_delete=models.CASCADE, related_name='reviews')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    rating = models.IntegerField(default=0)
+    comment = models.TextField(default="")
+    date_added = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f'{self.user.username} review for {self.mice.name}'
+    
