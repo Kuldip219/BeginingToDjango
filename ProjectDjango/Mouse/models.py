@@ -31,3 +31,12 @@ class ProjectReview(models.Model):
     def __str__(self):
         return f'{self.user.username} review for {self.mice.name}'
     
+# Many to Many
+
+class Project(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField(default="")
+    varieties = models.ManyToManyField(variety, related_name='projects')
+
+    def __str__(self):
+        return self.name
