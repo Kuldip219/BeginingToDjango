@@ -11,3 +11,6 @@ def all_mouse(request):
 def mouse_detail(request, mice_id):
     mice = get_object_or_404(variety, pk=mice_id)
     return render(request, 'mouse/mouse_detail.html', {'mice': mice})
+
+def mouse_info(request):
+    return render(request, 'mouse/mouse_info.html')

@@ -12,10 +12,10 @@ class varietyadmin(admin.ModelAdmin):
 
 class projectDetailadmin(admin.ModelAdmin):
     list_display = ['mice', 'detail_info', 'date_added']
-    filter_horizontal = ['mice']
 
 class projectadmin(admin.ModelAdmin):
     list_display = ['name', 'description']
+    filter_horizontal = ['varieties']
 
 
 admin.site.register(variety, varietyadmin)
